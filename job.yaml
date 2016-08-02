@@ -26,6 +26,7 @@
             maven-version: Maven3
             pom: pom.xml
             goals: clean install
-            
-- docker:
+       - shell: "Does this Run"
+
+- docker_image:
     name: docker_image1
