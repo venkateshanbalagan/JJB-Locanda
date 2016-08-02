@@ -1,5 +1,5 @@
 - job:
-    name: Locanda - JJB
+    name: Locanda - JJB 
     project-type: freestyle
     defaults: global
     description: 'JJB'
