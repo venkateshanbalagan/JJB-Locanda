@@ -1,0 +1,31 @@
+- job:
+    name: Demo1
+    project-type: freestyle
+    defaults: global
+    description: 'JJB'
+    block-downstream: false
+    concurrent: true
+    node: master
+    properties:
+       - github:
+          url: https://github.com/kishorramanan/locanda.git
+    scm:
+       - git:
+          url: https://github.com/kishorramanan/locanda.git
+          branches:
+            - master
+          git-config-name: Kishore
+          git-config-email: kishorramanan@gmail.com
+          extensions:
+            per-build-tag: true
+    triggers:
+       - pollscm:
+          cron: "* * * * *"
+    builders:
+       - maven-target:
+            maven-version: Maven3
+            pom: pom.xml
+            goals: clean install
+
+- docker:
+    name: docker_image1
